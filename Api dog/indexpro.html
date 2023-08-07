@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      const myPromis = fetch("https://dummyjson.com/products");
+
+      myPromis
+        .then((myPromis) => myPromis.json())
+        .then((myOpenData) => {
+          console.log(myOpenData);
+
+          for (let i = 0; i < myOpenData.length; i++) {
+            const onefile = myOpenData;
+            console.log("one", onefile);
+          }
+        });
+    </script>
+  </body>
+</html>

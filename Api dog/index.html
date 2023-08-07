@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>api</title>
+
+    <style>
+      .main-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        height: 600px;
+        width: 700px;
+        border: 4px solid rgb(116, 0, 37);
+        border-radius: 20px;
+        margin: auto;
+        gap: 20px;
+      }
+      .box-1 {
+        height: 400px;
+        width: 450px;
+
+        border-radius: 10px;
+      }
+      .img-box {
+        height: 400px;
+        width: 450px;
+        border-radius: 10px;
+        border: 6px solid rgb(4, 164, 222);
+      }
+      .img-box:hover {
+        height: 403px;
+        width: 453px;
+        transition: 0.2s;
+      }
+      .btn {
+        background-color: rgb(237, 124, 146);
+        padding: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        color: rgb(254, 254, 254);
+        font-size: 1rem;
+        box-shadow: 2px 4px rgb(180, 204, 227);
+        margin-top: 20px;
+      }
+      .btn:hover {
+        background-color: rgb(87, 125, 87);
+        transition: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <button id="chg-btn" onclick="reloadPage()">Change Image</button>
+    </div>
+
+    <script>
+      const mainbox = document.getElementById("box");
+      mainbox.className = "main-box";
+      const apiStor = fetch("https://dog.ceo/api/breeds/image/random");
+
+      apiStor
+        .then(function (apiStor) {
+          return apiStor.json();
+        })
+
+        .then(function (opendata) {
+          console.log("row data", opendata);
+
+          // for (let i = 0; i < opendata.length; i++) {
+          //   const storpic = opendata[i];
+          //   console.log("pic", storpic);
+
+          const crebox = document.createElement("div");
+          crebox.className = "box-1";
+          const cardcre = document.createElement("img");
+          cardcre.src = opendata.message;
+          cardcre.className = "img-box";
+          cardcre.style.setProperty("animate__shakeX", "2s");
+
+          // cardcre.addEventListener("mouseenter", () => {
+          //   cardcre.tagName.add("animate__shakeX");
+          // });
+
+          const chgbtn = document.getElementById("chg-btn");
+          chgbtn.className = "btn";
+
+          // console.log("show", cardcre.src);
+          crebox.appendChild(cardcre);
+          mainbox.appendChild(crebox);
+        });
+
+      function reloadPage() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
