@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper{
+    display: flex;
+    width: 100vw;
+    background-image: url(/images/bg.jpg);
+ 
+
+}
+
+
+.container{
+    display: flex;
+    height: 800px;
+    width: 1280px;
+    border: 5px solid rgb(33, 237, 18);
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+   
+  
+
+}
+
+.google-logo{
+    display: flex;
+    height: 130px;
+    width: 340px;
+    border: 2px solid white;
+    padding: 4px;
+
+
+}
+
+.google_text{
+
+    font-size: 6rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search_box{
+    height: 50px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.left_box{
+
+    display: flex
+
+}
+
+
+.searchimg{
+    height: 50px;
+    width: 50px;
+    border: 6px solid red;
+}
+
+/* -------lower box----- */
+
+.boxes{
+display: flex;
+ height: 400px;
+ width: 700px;
+ border: 2px solid red;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ padding-top: 10px;
+
+}
+
+.boximg{
+
+    height: 90px;
+    width: 90px;
+    border: 1px solid white;
+    padding: 10px;
+
+  
+
+}
+
+.img{
+   
+    height: 130px;
+    width: 130px;
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 50%;
+
+}
+p{
+    color: white;
+}
+
+.box-1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    height: 150px;
+    width:  150px;
+    border: 2px solid greenyellow;
+    border-radius: 50%;
+}
